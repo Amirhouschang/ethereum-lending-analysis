@@ -3,7 +3,7 @@
 Borrowing activity, users, asset mix and liquidations of four major DeFi lending protocols on Ethereum mainnet, 1 January – 31 August 2026. Built with Dune SQL.
 
 **Live dashboard:** [dune.com/amirhoushang/crypto-lending-on-ethereum-aave-vs-compound-vs-morpho-vs-spark](https://dune.com/amirhoushang/crypto-lending-on-ethereum-aave-vs-compound-vs-morpho-vs-spark)  
-**Detailed findings:** [report/findings.md](report/findings.md)
+**Detailed findings:** [report/findings.md](findings.md)
 
 ---
 
