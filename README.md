@@ -3,7 +3,7 @@
 Borrowing activity, users, asset mix and liquidations of four major DeFi lending protocols on Ethereum mainnet, 1 January – 31 August 2026. Built with Dune SQL.
 
 **Live dashboard:** [dune.com/amirhoushang/crypto-lending-on-ethereum-aave-vs-compound-vs-morpho-vs-spark](https://dune.com/amirhoushang/crypto-lending-on-ethereum-aave-vs-compound-vs-morpho-vs-spark)  
-**Detailed findings:** [report/findings.md](findings.md)
+**Detailed findings:** [findings.md](findings.md)
 
 ---
 
@@ -18,7 +18,7 @@ Borrowing activity, users, asset mix and liquidations of four major DeFi lending
 | 5 | **Stablecoins are the main product.** Roughly three quarters of borrowing on Aave, Morpho and Spark is in dollar tokens. Compound is the exception, with WETH as its largest borrowed asset. | Q5 |
 | 6 | **Liquidations come in waves.** January, February and June account for 83.5% of liquidated debt. | Q7a |
 
-Full answers to every sub-question: [report/findings.md](report/findings.md)
+Full answers to every sub-question: [findings.md](findings.md)
 
 ---
 
