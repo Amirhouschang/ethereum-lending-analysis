@@ -158,9 +158,9 @@ Large single events were checked on Etherscan. The biggest Compound liquidation 
 ```text
 ethereum-lending-analysis/
 ├── README.md
-├── queries/    19 queries (Q0–Q8 and dashboard helpers)
-├── data/       13 CSV exports of the query results
-├── images/     dashboard screenshots
+├── queries/      19 queries (Q0–Q8 and dashboard helpers)
+├── data/         13 CSV exports of the query results
+├── images/       dashboard screenshots
 └── findings.md   detailed results, hypotheses and spot checks
 ```
 
