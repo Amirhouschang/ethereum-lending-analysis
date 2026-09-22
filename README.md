@@ -161,8 +161,7 @@ ethereum-lending-analysis/
 ├── queries/    19 queries (Q0–Q8 and dashboard helpers)
 ├── data/       13 CSV exports of the query results
 ├── images/     dashboard screenshots
-└── report/
-    └── findings.md   detailed results, hypotheses and spot checks
+└── findings.md   detailed results, hypotheses and spot checks
 ```
 
 ## How to reproduce
