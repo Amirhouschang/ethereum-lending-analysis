@@ -13,9 +13,9 @@ Borrowing activity, users, asset mix and liquidations of four major DeFi lending
 |---|---------|----------|
 | 1 | **Aave dominates.** It handles two thirds of all borrowing ($57.2B of $85.6B) and about 90% of all borrower wallets. | Q1, Q6 |
 | 2 | **Spark is second by volume, not by users.** $14.8B was borrowed by only 1,409 wallets. Its median loan ($58.8K) is twelve times Aave's ($4.9K). | Q1, Q8 |
-| 3 | **A small group moves the market.** 2.6% of borrower wallets use more than one protocol, yet they account for 39.8% of borrow volume. 499 wallets using both Aave and Spark alone hold 28.6%. | Q6 |
+| 3 | **A small group holds a large share of volume.** 2.5% of borrower wallets use more than one protocol, yet they account for 39.9% of borrow volume. 499 wallets using both Aave and Spark alone hold 28.6%. | Q6 |
 | 4 | **Borrowing is highly concentrated.** The 10 largest wallets account for 40.5% of borrow volume on Aave and 85.8% on Morpho. | Q8 |
-| 5 | **Stablecoins are the main product.** Roughly three quarters of borrowing on Aave, Morpho and Spark is in dollar tokens. Compound is the exception, with WETH as its largest borrowed asset. | Q5 |
+| 5 | **Stablecoins are the main product.** Roughly three quarters of borrowing on Aave, Morpho and Spark is in dollar tokens (counted from the five largest tokens per protocol; smaller stablecoins sit in "Other"). Compound is the exception, with WETH as its largest borrowed asset. | Q5 |
 | 6 | **Liquidations come in waves.** January, February and June account for 83.5% of liquidated debt. | Q7a |
 
 Full answers to every sub-question: [findings.md](findings.md)
@@ -31,10 +31,10 @@ Full answers to every sub-question: [findings.md](findings.md)
 | # | Hypothesis | Result | Evidence |
 |---|------------|--------|----------|
 | H1 | Aave has the highest borrow volume | ✅ Confirmed | $57.2B, 66.8% of total (Q1) |
-| H2 | Stablecoins make up more than 60% of borrow volume | 🟡 Partly | Aave ~77%, Morpho ~79%, Spark ~74%; Compound only ~57% (Q5) |
+| H2 | Stablecoins make up more than 60% of borrow volume | 🟡 Partly | Aave ~77%, Morpho ~79%, Spark ~74%; Compound only ~57% (Q5). Counted: stablecoins among the five largest borrowed tokens per protocol; smaller stablecoins sit in "Other", so the real shares are higher. |
 | H3 | Median loan size differs by more than a factor of 2 between protocols | ✅ Confirmed | Spark $58.8K vs. Morpho $2.4K, factor ~25 (Q8) |
 | H4 | The 10 largest wallets hold more than 25% of borrow volume on every protocol | ✅ Confirmed | 40.5% (Aave) to 85.8% (Morpho) (Q8) |
-| H5 | Fewer than 10% of borrowers use more than one protocol | ✅ Confirmed | 2.6% (Q6) |
+| H5 | Fewer than 10% of borrowers use more than one protocol | ✅ Confirmed | 2.5% (Q6) |
 | H6 | Liquidations cluster in a few months instead of spreading evenly | ✅ Confirmed | Jan, Feb and Jun = 83.5% of liquidated debt (Q7a) |
 
 ---
@@ -123,8 +123,12 @@ Selected charts below. All tables and explanations are on the [live dashboard](h
 **Monthly borrow volume** — Aave borrowing fell from about $11B per month in Q1 to $3.5–5B from May, while Spark grew.
 ![Monthly borrow volume](images/02_monthly_borrowing.png)
 
-**Multi-protocol borrowers** — 2.6% of wallets, 39.8% of borrow volume.
-![Multi-protocol borrowers](images/03_multi_protocol_borrowers.png)
+**Multi-protocol borrowers** — 2.5% of wallets, 39.9% of borrow volume (Q6).
+
+| Group | Wallets | Share of wallets | Borrow volume | Share of volume |
+|-------|---------|------------------|---------------|-----------------|
+| Single protocol | 38,946 | 97.5% | $51.5B | 60.1% |
+| Multiple protocols | 1,019 | 2.5% | $34.1B | 39.9% |
 
 **Monthly liquidated debt** — three months account for 83.5% of all liquidations.
 ![Monthly liquidated debt](images/04_monthly_liquidations.png)
@@ -145,6 +149,7 @@ Large single events were checked on Etherscan. The biggest Compound liquidation 
 - Volumes are transaction activity, not TVL or outstanding debt. Repayments can relate to loans opened before 2026, so borrows minus repayments is not open debt.
 - About 10% of Morpho transactions have no USD price, so Morpho volumes are understated.
 - Compound v2 borrow events are missing from the source table, so Compound borrow volume is understated.
+- In Q0, Compound v2 has no `supply` events (only withdrawals), and Aave v1 and v2 have no deposit or borrow events. Deposit and borrow volumes for these versions are not part of the totals.
 - Aave means the core market only; the separate Lido, Horizon and EtherFi Aave markets are excluded.
 - One wallet is not one person. Contracts, vaults and bots appear as wallets — especially on Morpho, where a few hundred wallets make tens of thousands of deposits per month.
 - Liquidation intensity (liquidated debt ÷ borrow volume) is an activity indicator, not a default rate or risk score.
