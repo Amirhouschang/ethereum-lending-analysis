@@ -177,4 +177,6 @@ ethereum-lending-analysis/
 
 ---
 
-**Author:** [@Amirhouschang](https://github.com/Amirhouschang) · Dune: [@amirhoushang](https://dune.com/amirhoushang)
+## Rights
+
+© 2026 Amirhoushang Rahmannejad. All rights reserved. You are welcome to read and review this project. Copying, modifying or redistributing it requires my written permission.
